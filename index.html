@@ -7,10 +7,14 @@
     <script src="js/tictactoe.js"></script>
 </head>
 
-<body>
+<body onload="startGame()">
   <div class="card bg-primary">
-	<div class="card-body">
+	<div class="card-header">
 	  <h1 class="card-title text-center">Tic Tac Toe</h1>
+	</div>
+
+	<div class="card-body bg-light ml-10 mr-10">
+	  <h3 id = "player-turn" class="card-title text-center">In Game Info</h3>
 	</div>
   </div>
    
@@ -48,7 +52,7 @@
         <div class="row no-gutters h-25">
             <div id="cell7" class="col">
 			  <button id="select7" onclick="mark(7)" type="button"
-                    class="btn btn-outline-secondary btn-block w-100 h-100 border-0">6</button>
+                    class="btn btn-outline-secondary btn-block w-100 h-100 border-0">7</button>
             </div>
             <div id="cell8" class="col border-left border-right">
 			  <button id="select8" onclick="mark(8)" type="button"
