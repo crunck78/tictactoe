@@ -13,24 +13,40 @@ var allPlayers = [
 		'color' : 'bg-danger',
 		'markCount' : 0,
 		'wins' : 0
+	},
+	{ 	'number' : 3,
+		'mark' : 'Y',
+		'color' : 'bg-warning',
+		'markCount' : 0,
+		'wins' : 0
+	},
+	{
+		'number' : 4,
+		'mark' : 'H',
+		'color' : 'bg-success',
+		'markCount' : 0,
+		'wins' : 0
 	}
 ];
+
+var maxPlayers = 0; //controls allPlayers JSON depending on what grid size is selected, each grid size can have only a particular number of players
 
 var cells = [];
 var selections = [];
 var gridDimention;
 var gridSize; // equals gridDimention * gridDimention
 
-var player = 0;
+var actualPlayer = 0;
 var allMarks = 0; // keep track of how many cells have been selected, if all cells have been marked and win is false then game over, it is a tie
 var foundWinner = false; // if true game over, announce winner, if false and not all cells have been marked game is still on progress
 var tie = false; // grid full and no winning line
 
-function startGame(selectedDimention) {
+function startGame(selectedDimention, players) {
+	maxPlayers = players;
 	gridDimention = selectedDimention;
 	gridSize = gridDimention * gridDimention;
 	initGrid(gridSize);
-	document.getElementById('player-turn').innerHTML = 'Player ' +allPlayers[player]['number']+ ' select a cell.';
+	document.getElementById('player-turn').innerHTML = 'Player ' +allPlayers[actualPlayer]['number']+ ' select a cell.';
 }
 
 function initGrid(gridDimention) {
@@ -43,20 +59,20 @@ function initGrid(gridDimention) {
 function mark(nr) {
 	//allMarks++;
 	selections[nr].classList.add('d-none');//hidde button
-	allPlayers[player]['markCount']++;
-	cells[nr].classList.add(allPlayers[player]['color']);//mark selection
-	cells[nr].innerHTML = allPlayers[player]['mark'];//mark selection
-	if( allPlayers[player]['markCount'] >= gridDimention) { // at least required marks to check for a win equals grid dimention
+	allPlayers[actualPlayer]['markCount']++;
+	cells[nr].classList.add(allPlayers[actualPlayer]['color']);//mark selection
+	cells[nr].innerHTML = allPlayers[actualPlayer]['mark'];//mark selection
+	if( allPlayers[actualPlayer]['markCount'] >= gridDimention) { // at least required marks to check for a win equals grid dimention
 		foundWinner = checkGrid();
 	}
 	if(foundWinner) {
 		hiddeUnselectedButtons();
-		allPlayers[player]['wins']++;
+		allPlayers[actualPlayer]['wins']++;
 		document.getElementById('new-game').classList.remove('d-none');
-		document.getElementById('player-turn').innerHTML = 'Player ' +allPlayers[player]['number']+ ' has won the Game.';
+		document.getElementById('player-turn').innerHTML = 'Player ' +allPlayers[actualPlayer]['number']+ ' has won the Game.';
 	} else { //change player
-		player = (player == allPlayers.length - 1) ? 0 : (player + 1);
-		document.getElementById('player-turn').innerHTML = 'Player ' +allPlayers[player]['number']+ ' select a cell.';
+		actualPlayer = (actualPlayer == maxPlayers - 1) ? 0 : (actualPlayer + 1);
+		document.getElementById('player-turn').innerHTML = 'Player ' +allPlayers[actualPlayer]['number']+ ' select a cell.';
 	}
 }
 
@@ -72,9 +88,9 @@ function hiddeUnselectedButtons(){
 
 function checkGrid() {
 	
-	var win = checkLines( 1, gridDimention );
+	var win = checkLines( 1, gridDimention ); //rows check
 	if(win == 0){
-		win = checkLines( gridDimention, 1);
+		win = checkLines( gridDimention, 1); // columns check
 		if( win == 0 ){
 			win = checkDiagonals();
 		}

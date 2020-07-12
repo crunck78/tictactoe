@@ -1,70 +1,43 @@
 <html>
 
 <head>
-    <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/tictactoe.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/index.js"></script>
 </head>
 
-<body onload="startGame(3)">
+<body onload="getGridDimention()">
   <div class="card bg-primary">
-	<div class="card-header">
-	  <h1 class="card-title text-center">Tic Tac Toe</h1>
-	</div>
-
-	<div class="card-body bg-light ml-10 mr-10">
-	  <h3 id = "player-turn" class="card-title text-center">In Game Info</h3>
-	  <button onclick="" id="new-game" class=" btn btn-primary d-none">Start new Game</button>
-	</div>
-  </div>
-   
-  <div id="grid" class="container d-flex flex-column justify-content-center">
-        <div class="row no-gutters h-25">
-            <div id="cell0" class="col">
-                <button id="select0" onclick="mark(0)" type="button"
-                    class="btn btn-outline-secondary btn-block w-100 h-100 border-0">1</button>
-            </div>
-            <div id="cell1" class="col border-left border-right">
-			  <button id="select1" onclick="mark(1)" type="button"
-                    class="btn btn-outline-secondary btn-block w-100 h-100 border-0">2</button>
-            </div>
-            <div id="cell2" class="col">
-			  <button id="select2" onclick="mark(2)" type="button"
-                    class="btn btn-outline-secondary btn-block w-100 h-100 border-0">3</button>
-            </div>
-        </div>
-
-        <div class="row no-gutters border-top border-bottom h-25">
-            <div id="cell3" class="col">
-			  <button id="select3" onclick="mark(3)" type="button"
-                    class="btn btn-outline-secondary btn-block w-100 h-100 border-0">4</button>
-            </div>
-            <div id="cell4" class="col border-left border-right">
-			  <button id="select4" onclick="mark(4)" type="button"
-                    class="btn btn-outline-secondary btn-block w-100 h-100 border-0">5</button>
-            </div>
-            <div id="cell5" class="col">
-			  <button id="select5" onclick="mark(5)" type="button"
-                    class="btn btn-outline-secondary btn-block w-100 h-100 border-0">6</button>
-            </div>
-        </div>
-
-        <div class="row no-gutters h-25">
-            <div id="cell6" class="col">
-			  <button id="select6" onclick="mark(6)" type="button"
-                    class="btn btn-outline-secondary btn-block w-100 h-100 border-0">7</button>
-            </div>
-            <div id="cell7" class="col border-left border-right">
-			  <button id="select7" onclick="mark(7)" type="button"
-                    class="btn btn-outline-secondary btn-block w-100 h-100 border-0">8</button>
-            </div>
-            <div id="cell8" class="col">
-			  <button id="select8" onclick="mark(8)" type="button"
-                    class="btn btn-outline-secondary btn-block w-100 h-100 border-0">9</button>
-            </div>
-        </div>
+    <div class="card-header">
+      <h1 class="card-title text-center">Tic Tac Toe</h1>
     </div>
+
+    <div class="card-body bg-light ml-10 mr-10 d-flex flex-column align-items-center">
+      <h3 id="game-mode-selection" class="card-title text-center">In Game Info</h3>
+      <div id="grid-selection" class="container justify-content-center">
+        <div class="row">
+          <div id="" class="col">
+            <button id="grid-3x3" onclick="setGridSize(3)" type="button"
+              class="btn btn-info btn-lg">3x3</button>
+          </div>
+          <div id="grid-4x4" class="col">
+            <button id="" onclick="setGridSize(4)" type="button"
+              class="btn btn-info btn-lg">4x4</button>
+          </div>
+          <div id="" class="col">
+            <button id="grid-5x5" onclick="setGridSize(5)" type="button"
+              class="btn btn-info btn-lg">5x5</button>
+          </div>
+        </div>
+      </div>
+      <a href="grid3x3.html" id="start-grid3" class="btn btn-primary btn-lg d-none">Start Game</a>
+      <a href="grid4x4.html" id="start-grid4" class="btn btn-primary btn-lg d-none">Start Game</a>
+      <a href="grid5x5.html" id="start-grid5" class="btn btn-primary btn-lg d-none">Start Game</a>
+    </div>
+  </div>
 </body>
 
 </html>
