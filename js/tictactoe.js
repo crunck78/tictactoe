@@ -1,5 +1,3 @@
-alert('play tic tac toe'); //test
-
 var allPlayers = [	
 	{ 	'number' : 1,
 		'mark' : 'X',
