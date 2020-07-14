@@ -45,11 +45,11 @@ function startGame(selectedDimention, players) {
 	maxPlayers = players;
 	gridDimention = selectedDimention;
 	gridSize = gridDimention * gridDimention;
-	initGrid(gridSize);
+	initGrid();
 	document.getElementById('player-turn').innerHTML = 'Player ' +allPlayers[actualPlayer]['number']+ ' select a cell.';
 }
 
-function initGrid(gridDimention) {
+function initGrid() {
 	for(var i = 0; i < gridSize; i++) { // grid dimention 3x3
 		cells.push(document.getElementById('cell' + i));
 		selections.push(document.getElementById('select' + i));
@@ -88,9 +88,9 @@ function hiddeUnselectedButtons(){
 
 function checkGrid() {
 	
-	var win = checkLines( 1, gridDimention ); //rows check
+	var win = checkLines( 1, gridDimention ); //columns check
 	if(win == 0){
-		win = checkLines( gridDimention, 1); // columns check
+		win = checkLines( gridDimention, 1); // rows check
 		if( win == 0 ){
 			win = checkDiagonals();
 		}
@@ -100,6 +100,7 @@ function checkGrid() {
 
 function checkLines( lineOffset, cellOffset) {
 	for( var i = 0; i < gridDimention; i++){
+		// preset variables for line check and next cell check
 		var match = 0;
 		var firstCell = i * lineOffset;
 		var nextCell = firstCell + cellOffset;
@@ -112,7 +113,7 @@ function checkLines( lineOffset, cellOffset) {
 			match++;
 			nextCell += cellOffset;
 		}
-		if(match != 0){
+		if(match != 0){ // found winning line;
 			return match;
 		}
 	}
@@ -127,7 +128,7 @@ function checkDiagonals(){
 	for( var i = 0; i < 2; i++){ // any gridDimention has only 2 diagonals
 		
 		while( nextCell <= lastCell){
-			if(cells[ firstCell ].innerHTML != cells[ nextCell ].innerHTML){
+			if(cells[ firstCell ].innerHTML != cells[ nextCell ].innerHTML){ // no match, go to next line
 				match = 0;
 				firstCell = gridDimention - 1;
 				nextCell = firstCell + (gridDimention - 1);
@@ -135,10 +136,10 @@ function checkDiagonals(){
 				break;
 			}
 			match++;
-			if( i == 0 ){
+			if( i == 0 ){ // check upper left to bottom right corners diagonal
 				nextCell += (gridDimention + 1);
 			} else{
-				nextCell += (gridDimention - 1);
+				nextCell += (gridDimention - 1); // check upper right to bottom left corners diagonal
 			}
 		}
 		if(match != 0){

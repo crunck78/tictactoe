@@ -1,5 +1,5 @@
 function getGridDimention(){
-    console.log('Page Loaded.')
+    console.log('Page Loaded.');
     document.getElementById('game-mode-selection').innerHTML = 'Select Grid Size';
 }
 
