@@ -6,6 +6,10 @@
 	width: 487px;
 }
 
+.row>*{
+	padding: 0 !important;
+}
+
 .row {
 	border-width: 5px !important;
 }
