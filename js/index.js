@@ -8,3 +8,7 @@ function setGridSize(size){
     document.getElementById('grid-selection').classList.add('d-none');
     document.getElementById('start-grid'+size).classList.remove('d-none');
 }
+
+function goToGrid(path){
+    window.location.href = path;
+}
