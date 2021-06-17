@@ -17,6 +17,10 @@
 	height: 149px;
 }
 
+.marked{
+    cursor: not-allowed;
+}
+
 /* same as bootstrap's container class  responsivenes setting*/
 @media (max-width: 992px) {
 

@@ -59,6 +59,7 @@ function mark(nr) {
 	selections[nr].classList.add('d-none');//hidde button
 	allPlayers[actualPlayer]['markCount']++;
 	cells[nr].classList.add(allPlayers[actualPlayer]['color']);//mark selection
+	cells[nr].classList.add('marked');//mark selection
 	cells[nr].innerHTML = allPlayers[actualPlayer]['mark'];//mark selection
 	if( allPlayers[actualPlayer]['markCount'] >= gridDimention) { // at least required marks to check for a win equals grid dimention
 		foundWinner = checkGrid();
