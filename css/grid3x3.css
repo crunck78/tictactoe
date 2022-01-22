@@ -4,11 +4,11 @@
 
 .container {
 	width: 487px;
+	/* max-height: 100%;
+	overflow-y: auto; */
 }
 
-.row>*{
-	padding: 0 !important;
-}
+
 
 .row {
 	border-width: 5px !important;
@@ -21,31 +21,25 @@
 	height: 149px;
 }
 
-.marked{
-    cursor: not-allowed;
-}
-
-/* same as bootstrap's container class  responsivenes setting*/
+/* same as bootstrap's container class  responsiveness setting*/
 @media (max-width: 576px) {
-
 	.col {
 		font-size: 4em;
 		height: 96px;
 	}
 
 	.container{
-		width: 328px;
+		width: 250px;
 	}
 }
 
 @media (max-width: 350px) {
-
 	.col {
 		font-size: 2em;
 		height: 54px;
 	}
 
 	.container{
-		width: 202px;
+		width: 100%;
 	}
 }

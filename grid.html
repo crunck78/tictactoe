@@ -1,0 +1,73 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/grid3x3.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/tictactoe.js"></script>
+</head>
+
+<body onload="startGame(3, 2)">
+  <div class="main card bg-primary">
+    <div class="card-header">
+      <h1 class="card-title text-center">Tic Tac Toe</h1>
+    </div>
+
+    <div class="card-body bg-light ml-10 mr-10 d-flex flex-column align-items-center">
+      <h3 id="player-turn" class="card-title text-center">In Game Info</h3>
+      <a href="grid3x3.html" id="new-game" class="btn btn-primary btn-sm d-none">Start new Game</a>
+    </div>
+  </div>
+
+  <div id="grid" class="container mt-4">
+    <div class="row no-gutters border-bottom">
+      <div id="cell0" class="col border-end">
+        <button id="select0" onclick="mark(0)" type="button"
+          class="btn btn-outline-secondary btn-block w-100 h-100 border-0">1</button>
+      </div>
+      <div id="cell1" class="col border-end">
+        <button id="select1" onclick="mark(1)" type="button"
+          class="btn btn-outline-secondary btn-block w-100 h-100 border-0">2</button>
+      </div>
+      <div id="cell2" class="col">
+        <button id="select2" onclick="mark(2)" type="button"
+          class="btn btn-outline-secondary btn-block w-100 h-100 border-0">3</button>
+      </div>
+    </div>
+
+    <div class="row no-gutters border-bottom">
+      <div id="cell3" class="col border-end">
+        <button id="select3" onclick="mark(3)" type="button"
+          class="btn btn-outline-secondary btn-block w-100 h-100 border-0">4</button>
+      </div>
+      <div id="cell4" class="col border-end">
+        <button id="select4" onclick="mark(4)" type="button"
+          class="btn btn-outline-secondary btn-block w-100 h-100 border-0">5</button>
+      </div>
+      <div id="cell5" class="col">
+        <button id="select5" onclick="mark(5)" type="button"
+          class="btn btn-outline-secondary btn-block w-100 h-100 border-0">6</button>
+      </div>
+    </div>
+
+    <div class="row no-gutters">
+      <div id="cell6" class="col border-end">
+        <button id="select6" onclick="mark(6)" type="button"
+          class="btn btn-outline-secondary btn-block w-100 h-100 border-0">7</button>
+      </div>
+      <div id="cell7" class="col border-end">
+        <button id="select7" onclick="mark(7)" type="button"
+          class="btn btn-outline-secondary btn-block w-100 h-100 border-0">8</button>
+      </div>
+      <div id="cell8" class="col">
+        <button id="select8" onclick="mark(8)" type="button"
+          class="btn btn-outline-secondary btn-block w-100 h-100 border-0">9</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

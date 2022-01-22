@@ -50,7 +50,7 @@ function startGame(selectedDimention, players) {
 }
 
 function initGrid() {
-	for (var i = 0; i < gridSize; i++) { // grid dimention 3x3
+	for (var i = 0; i < gridSize; i++) { // grid dimention 3x3, 4x4, 5x5
 		cells.push(document.getElementById('cell' + i));
 		selections.push(document.getElementById('select' + i));
 	}
@@ -69,12 +69,12 @@ function mark(nr) {
 	if (foundWinner) {
 		hiddeUnselectedButtons();
 		allPlayers[actualPlayer]['wins']++;
-		document.getElementById('new-game').classList.remove('d-none');
+		document.getElementById('new-game').classList.remove('invisible');
 		document.getElementById('player-turn').innerHTML = 'Player ' + allPlayers[actualPlayer]['number'] + ' has won the Game.';
 	}
 	else if (allMarks == gridSize) {
 		hiddeUnselectedButtons();
-		document.getElementById('new-game').classList.remove('d-none');
+		document.getElementById('new-game').classList.remove('invisible');
 		document.getElementById('player-turn').innerHTML = "It's a Tie";
 	}
 	else { //change player

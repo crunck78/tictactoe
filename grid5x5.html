@@ -6,140 +6,145 @@
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/grid5x5.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="js/tictactoe.js"></script>
 </head>
 
 <body onload="startGame(5, 4)">
-    <div class="card bg-primary">
+    <div class="main card bg-primary">
         <div class="card-header">
-            <h1 class="card-title text-center">Tic Tac Toe</h1>
+            <h1 class="card-title text-center"><a href="/index.html">Tic Tac Toe</a></h1>
         </div>
 
         <div class="card-body bg-light ml-10 mr-10 d-flex flex-column align-items-center">
+          <div>
             <h3 id="player-turn" class="card-title text-center">In Game Info</h3>
-            <a href="grid5x5.html" id="new-game" class="btn btn-primary btn-sm d-none">Start new Game</a>
+            <a href="grid5x5.html" id="new-game" class="btn btn-primary btn-sm invisible">Start new Game</a>
+          </div>
+
+          <div id="grid" class="container mt-4">
+
+            <div class="row no-gutters border-bottom">
+                <div id="cell0" class="col border-end">
+                    <button id="select0" onclick="mark(0)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">1</button>
+                </div>
+                <div id="cell1" class="col border-end">
+                    <button id="select1" onclick="mark(1)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">2</button>
+                </div>
+                <div id="cell2" class="col border-end">
+                    <button id="select2" onclick="mark(2)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">3</button>
+                </div>
+                <div id="cell3" class="col border-end">
+                    <button id="select3" onclick="mark(3)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">4</button>
+                </div>
+                <div id="cell4" class="col">
+                    <button id="select4" onclick="mark(4)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">5</button>
+                </div>
+            </div>
+    
+            <div class="row no-gutters  border-bottom">
+                <div id="cell5" class="col border-end">
+                    <button id="select5" onclick="mark(5)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">6</button>
+                </div>
+                <div id="cell6" class="col border-end">
+                    <button id="select6" onclick="mark(6)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">7</button>
+                </div>
+                <div id="cell7" class="col border-end">
+                    <button id="select7" onclick="mark(7)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">8</button>
+                </div>
+                <div id="cell8" class="col  border-end">
+                    <button id="select8" onclick="mark(8)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">9</button>
+                </div>
+                <div id="cell9" class="col">
+                    <button id="select9" onclick="mark(9)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">10</button>
+                </div>
+            </div>
+    
+            <div class="row no-gutters  border-bottom">
+                
+                <div id="cell10" class="col border-end">
+                    <button id="select10" onclick="mark(10)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">11</button>
+                </div>
+                <div id="cell11" class="col border-end">
+                    <button id="select11" onclick="mark(11)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">12</button>
+                </div>
+                <div id="cell12" class="col border-end">
+                    <button id="select12" onclick="mark(12)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">13</button>
+                </div>
+                <div id="cell13" class="col border-end">
+                    <button id="select13" onclick="mark(13)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">14</button>
+                </div>
+                <div id="cell14" class="col">
+                    <button id="select14" onclick="mark(14)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">15</button>
+                </div>
+            </div>
+    
+            <div class="row no-gutters border-bottom">
+                <div id="cell15" class="col border-end">
+                    <button id="select15" onclick="mark(15)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">16</button>
+                </div>
+                <div id="cell16" class="col border-end">
+                    <button id="select16" onclick="mark(16)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">17</button>
+                </div>
+                <div id="cell17" class="col border-end">
+                    <button id="select17" onclick="mark(17)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">18</button>
+                </div>
+                <div id="cell18" class="col border-end">
+                    <button id="select18" onclick="mark(18)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">19</button>
+                </div>
+                <div id="cell19" class="col">
+                    <button id="select19" onclick="mark(19)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">20</button>
+                </div>
+            </div>
+    
+            <div class="row no-gutters">
+                <div id="cell20" class="col border-end">
+                    <button id="select20" onclick="mark(20)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">21</button>
+                </div>
+                <div id="cell21" class="col border-end">
+                    <button id="select21" onclick="mark(21)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">22</button>
+                </div>
+                <div id="cell22" class="col border-end">
+                    <button id="select22" onclick="mark(22)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">23</button>
+                </div>
+                <div id="cell23" class="col border-end">
+                    <button id="select23" onclick="mark(23)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">24</button>
+                </div>
+                <div id="cell24" class="col">
+                    <button id="select24" onclick="mark(24)" type="button"
+                        class="btn btn-outline-secondary btn-block h-100 border-0">25</button>
+                </div>
+            </div>
+    
+        </div>
         </div>
     </div>
 
-    <div id="grid" class="container mt-4">
-
-        <div class="row no-gutters border-bottom">
-            <div id="cell0" class="col border-right">
-                <button id="select0" onclick="mark(0)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">1</button>
-            </div>
-            <div id="cell1" class="col border-right">
-                <button id="select1" onclick="mark(1)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">2</button>
-            </div>
-            <div id="cell2" class="col border-right">
-                <button id="select2" onclick="mark(2)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">3</button>
-            </div>
-            <div id="cell3" class="col border-right">
-                <button id="select3" onclick="mark(3)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">4</button>
-            </div>
-            <div id="cell4" class="col">
-                <button id="select4" onclick="mark(4)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">5</button>
-            </div>
-        </div>
-
-        <div class="row no-gutters  border-bottom">
-            <div id="cell5" class="col border-right">
-                <button id="select5" onclick="mark(5)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">6</button>
-            </div>
-            <div id="cell6" class="col border-right">
-                <button id="select6" onclick="mark(6)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">7</button>
-            </div>
-            <div id="cell7" class="col border-right">
-                <button id="select7" onclick="mark(7)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">8</button>
-            </div>
-            <div id="cell8" class="col  border-right">
-                <button id="select8" onclick="mark(8)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">9</button>
-            </div>
-            <div id="cell9" class="col">
-                <button id="select9" onclick="mark(9)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">10</button>
-            </div>
-        </div>
-
-        <div class="row no-gutters  border-bottom">
-            
-            <div id="cell10" class="col border-right">
-                <button id="select10" onclick="mark(10)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">11</button>
-            </div>
-            <div id="cell11" class="col border-right">
-                <button id="select11" onclick="mark(11)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">12</button>
-            </div>
-            <div id="cell12" class="col border-right">
-                <button id="select12" onclick="mark(12)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">13</button>
-            </div>
-            <div id="cell13" class="col border-right">
-                <button id="select13" onclick="mark(13)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">14</button>
-            </div>
-            <div id="cell14" class="col">
-                <button id="select14" onclick="mark(14)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">15</button>
-            </div>
-        </div>
-
-        <div class="row no-gutters border-bottom">
-            <div id="cell15" class="col border-right">
-                <button id="select15" onclick="mark(15)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">16</button>
-            </div>
-            <div id="cell16" class="col border-right">
-                <button id="select16" onclick="mark(16)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">17</button>
-            </div>
-            <div id="cell17" class="col border-right">
-                <button id="select17" onclick="mark(17)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">18</button>
-            </div>
-            <div id="cell18" class="col border-right">
-                <button id="select18" onclick="mark(18)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">19</button>
-            </div>
-            <div id="cell19" class="col">
-                <button id="select19" onclick="mark(19)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">20</button>
-            </div>
-        </div>
-
-        <div class="row no-gutters">
-            <div id="cell20" class="col border-right">
-                <button id="select20" onclick="mark(20)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">21</button>
-            </div>
-            <div id="cell21" class="col border-right">
-                <button id="select21" onclick="mark(21)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">22</button>
-            </div>
-            <div id="cell22" class="col border-right">
-                <button id="select22" onclick="mark(22)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">23</button>
-            </div>
-            <div id="cell23" class="col border-right">
-                <button id="select23" onclick="mark(23)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">24</button>
-            </div>
-            <div id="cell24" class="col">
-                <button id="select24" onclick="mark(24)" type="button"
-                    class="btn btn-outline-secondary btn-block h-100 border-0">25</button>
-            </div>
-        </div>
-
-    </div>
+    
 </body>
 
 </html>
